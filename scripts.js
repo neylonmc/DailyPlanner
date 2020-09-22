@@ -42,10 +42,9 @@ function setColor(element, color) {
 $(".saveBtn").on("click", function(event) {
     event.preventDefault(); 
   
-  
+    var key =$(this).siblings(".time").attr("id");
       var value = $(this).siblings(".textArea").val();
-      var key =$(this).siblings(".time").attr("id");
       
-      sessionStorage.setItem(key, value);
+      localStorage.setItem(key, value);
       
-      });
+});
