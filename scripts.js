@@ -5,7 +5,6 @@ console.log(today);
 document.getElementById("currentDay").innerHTML = today;
 
 //Get the rows the change color based on the time of day - past, present and future.
-
 var hour = moment().format('H'); 
 console.log(hour);
 
@@ -32,7 +31,21 @@ Array.from(rows).forEach(row => {
       }
 });
 
+//Sets the colors to the appropriate rows. 
 function setColor(element, color) {
     element.style.backgroundColor = color;
   }
 
+
+//Storing data from textArea using sessionStorage
+
+$(".saveBtn").on("click", function(event) {
+    event.preventDefault(); 
+  
+  
+      var value = $(this).siblings(".textArea").val();
+      var key =$(this).siblings(".time").attr("id");
+      
+      sessionStorage.setItem(key, value);
+      
+      });
